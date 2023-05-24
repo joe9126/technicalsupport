@@ -13,7 +13,7 @@
                         <div class="col-sm-10">
                             <div class="" id="accordion">
                                 <p class="fw-bold fs-4">{{now()->format('Y')}} Sales Summary</p>
-                                <canvas id="myChart"></canvas>
+                                <canvas id="myChart" style="max-height: 400px;"></canvas>
                             </div>
                         </div>
                     </div>
