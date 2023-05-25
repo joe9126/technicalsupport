@@ -225,7 +225,7 @@ $("#newticketform").submit(function(event){
                     contentType:false,
                      beforeSend:function(){
                         var spinner = '<div class="spinner-border spinner-border-sm text-success fs-5" role="status"><span class="visually-hidden"> Loading...</span></div>';
-                           $(".message").html(spinner+"Processing..." );
+                           $(".message").html(spinner+" Processing..." );
                            $("#alertmessage3").css("display","block");
                            $("#alertmessage3")[0].scrollIntoView();
                      },

@@ -208,8 +208,8 @@ if( window.FormData !== undefined ) {
         processData:false,
         contentType:false,
         beforeSend:function(){
-            var spinner = '<div class="spinner-border text-light fs-5" role="status"><span class="visually-hidden">Loading...</span></div>';
-            $("#claimsubmit").html("Updating "+spinner);
+            var spinner = '<div class="spinner-border spinner-border-sm text-light fs-5" role="status"><span class="visually-hidden">Loading...</span></div>';
+            $("#claimsubmit").html(spinner+" Updating...");
                 },
         success:function(response){
             $("#claimsubmit").replaceWith(originalState);
