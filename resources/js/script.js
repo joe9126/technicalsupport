@@ -825,8 +825,8 @@ $(document).on("submit","#ticketupdateform",function(event){
                 processData: false,
                 contentType: false,
                 beforeSend:function(){
-                    var spinner = '<div class="spinner-border text-success fs-5" role="status"><span class="visually-hidden"> Loading...</span></div>';
-                     $("#submitupdate").html("Updating "+spinner);
+                    var spinner = '<div class="spinner-border spinner-border-sm text-light fs-5" role="status"><span class="visually-hidden"> Loading...</span></div>';
+                     $("#submitupdate").html(spinner+" Updating...");
                 },
                 success:function(response){
                     $("#submitupdate").replaceWith(originalState);
