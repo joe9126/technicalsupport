@@ -216,7 +216,7 @@ $("#newticketform").submit(function(event){
                 formData.append('clientname',$("#customername option:selected").text());   
                  formData.append('client',$("#customername option:selected").val());               
                 
-               console.log(formData);
+               //console.log(formData);
                 $.ajax({
                     url:"saveticket",
                     method:"post",

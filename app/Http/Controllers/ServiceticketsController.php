@@ -283,7 +283,9 @@ public function showTicket(Request $request){
         return $ticket;
     }
 
-    
+    /**
+     * SERVICE TICKET UPDATE // MAKING SERVICE ENTRY
+     */
 public function updateTicket(Request $request){
       
         try{
@@ -355,6 +357,68 @@ public function updateTicket(Request $request){
                         ->cc($cc_list,'')
                         ->subject($subject);
                         });
+                $clientnotify = $request->notifyclient;
+                if( $status && $clientnotify ==1){
+                    $jobcardurl=""; $attachstatus=0;
+                    $clientdata = Clients::where("clientname","=",$csrno[0]->clientname)
+                    ->select("email","secemail","contactperson")
+                    ->get();
+
+                        foreach($clientdata as $row){
+                            array_push($mail_list,$row->email);
+                            array_push($mail_list,$row->secemail);
+                            $contactname =$row->contactperson;                
+                        }
+
+                        $jobcard = Servicetickets::where('servicetickets.ticketno',$request->ticketno)
+                                    ->select( "servicetickets.faultreported","serviceentries.attachment","clients.clientname")
+                                    ->leftjoin("serviceentries","servicetickets.ticketno","=","serviceentries.ticketno")
+                                    ->leftjoin("clients","servicetickets.client","=","clients.id")
+                                    ->get();
+
+                                if(filter_var($jobcard[0]->attachment,FILTER_VALIDATE_URL) !==false){
+                                        $jobcardurl = $jobcard[0]->attachment; $attachstatus=0;
+                                }else{
+                                    $destinationPath = base_path('Uploads');
+                                    $jobcardurl = $destinationPath.'/'.$jobcard[0]->attachment;
+                                    $attachstatus=1;
+                                }
+                               
+                                $ticketinfo = [
+                                    "ticketno"=>$request->ticketno,
+                                    "client"=>$jobcard[0]->clientname,
+                                    "fault"=>$jobcard[0]->faultreported,
+                                    "jobcardno"=>$request->jobcardno,
+                                    "cardtitle"=>$request->cardtitle,
+                                    "start_time"=>Carbon::parse($request->start_time)->format("d/m/Y h:m"),
+                                    "end_time"=>Carbon::parse($request->end_time)->format("d/m/Y h:m"),
+                                    "site"=>$request->city,
+                                    "model"=>$request->model,
+                                    "serialno"=>$request->serialno,
+                                    "contact"=>$contactname,
+                                    "findings"=>$request->findings,
+                                    "actiontaken"=>$request->action_taken,
+                                    "recommendations"=>$request->recommendations,
+                                    "status"=>$request->status,
+                                    "attachstatus"=>$attachstatus,
+                                ];
+                       $subject = "TICKET # ".$request->ticketno." UPDATED|".$jobcard[0]->faultreported." AT ".$jobcard[0]->clientname.", ".$request->city."";
+                        Mail::send('layouts.jobcardemail', ["ticketinfo"=>$ticketinfo],
+                                    function($message) use ($mail_list,$cc_list,$attachstatus,$jobcardurl, $subject){
+                                     $message->to($mail_list, '')
+                                    ->replyTo('service@symphony.co.ke','')
+                                    ->cc($cc_list,'')
+                                    ->subject($subject);
+
+                            if($attachstatus==1){
+                                $message->attach($jobcardurl);
+                            }else{
+
+                                array_push($ticketinfo["jobcardurl"],$jobcardurl);
+                            }
+                        });
+                }
+
 
                 return response()->json([
                     'success'=>true,

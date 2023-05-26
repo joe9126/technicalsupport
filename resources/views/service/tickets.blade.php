@@ -253,8 +253,8 @@
                                 </div>
                                 </div>
                                 <div class="row mb-3 ">
-                                    <label for="recommendation" class="col-sm-3">Ticket Status <span class="text-danger">*</span></label>
-                                    <div class="col-sm-6">
+                                    <label for="recommendation" class="col-sm-2">Ticket Status <span class="text-danger">*</span></label>
+                                    <div class="col-sm-3">
                                         <select class="form-select" aria-label="Status" id="ticketstatus" name="ticketstatus" required data-parsley-required-message="Ticket status is required">
                                             <option value="">Select Status</option>
                                             <option value="Closed">Closed</option>
@@ -262,6 +262,17 @@
                                             <option value="Ongoing">Pending</option>
                                           </select>
                                     </div>
+
+                                    <label for="notifyclient" class="col-sm-2">Send Report<span class="text-danger"> </span></label>
+                                    <div class="col-sm-2 form-check ml-3"> 
+                                        <input class="form-check-input" type="radio" name="notifyclient" id="notify" checked value="1">
+                                        <label class="form-check-label" for="locked">Send </label>
+                                    </div>
+    
+                                      <div class="col-sm-2 form-check ml-3">
+                                            <input class="form-check-input" type="radio" name="notifyclient" id="dontnotify"  value="0">
+                                            <label class="form-check-label" for="unlocked">Do Not Send</label>
+                                        </div>
                                 </div>
                                 <div class="row mb-3 justify-center">
                                     <div class="col-sm-4 pl-3 pr-3 ">

@@ -788,7 +788,7 @@ $(document).on("submit","#ticketupdateform",function(event){
             }else{
                // alert("prepping form");
             var formdata = new FormData();
-
+            formdata.append('cardtitle', $("#cardtitle").text());
             formdata.append('ticketno', $("#ticketno").text());
             formdata.append('jobcardno', $("#jobcardno").val());
             formdata.append('city', $("#site").val());
@@ -800,6 +800,8 @@ $(document).on("submit","#ticketupdateform",function(event){
             formdata.append('action_taken', $("#action_taken").val());
             formdata.append('recommendations', $("#recommendations").val());
             formdata.append('status', $("#ticketstatus option:selected").val());
+            var notifyclient =  $('input[name="notifyclient"]:checked').val();
+            formdata.append('notifyclient', notifyclient);
 
             var attachment = $("#jobcardupload")[0].files[0];
             var fileInput = $.trim($("#jobcardupload").val());
@@ -816,7 +818,7 @@ $(document).on("submit","#ticketupdateform",function(event){
                 formdata.append('filename',filename);
             }
             var originalState = $("#submitupdate").clone();
-           // console.log(formdata);
+           console.log(formdata);
             $.ajax({
                 url:"ticket/update",
                 type:"post",
@@ -1428,19 +1430,7 @@ $(function(){
     });
 });
 
-//check this function in supplyrequests.js
-/**
- * change display when new csr btn is clicked
- */
-/*
-$("#newcsrbtn").on("click",function(){
-    $("#csrpanel").children().hide();
-    $("#csrinfosection").hide();
-    
-    $("#createcsrsection").show();
-    countCSR(); //display the csr number
-  });
-  */
+
 
 $(".goback").on("click",function(){
     $("#createcsrsection").hide();
