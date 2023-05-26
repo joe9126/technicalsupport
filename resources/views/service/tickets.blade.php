@@ -8,7 +8,7 @@
     <div class="row" id="ticketlist">
         <!--<div class="col-sm-1"></div>-->
         <div class="col-sm-12">
-            <div class="bg-light rounded pl-5 pr-5 pt-6 pb-6  section">
+            <div class="card  rounded pl-5 pr-5 pt-6 pb-6  section">
                <div class="row justify-content-center"> 
                  <div class="col-sm-8">
                     <div class="alert alert-info ml-5 mr-5" role="alert">

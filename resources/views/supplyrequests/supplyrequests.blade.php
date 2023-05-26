@@ -112,7 +112,7 @@
 <!-- create new csr panel -->
         <div class="row" id="createcsrsection"> 
             <div class="col-sm-12">
-                <div class="card pl-5 pr-5 pt-3 pb-3">
+                <div class="card pl-5 pr-5 pt-1 pb-3">
                     <div class="row">
                         <div class="col-sm-4">
                             <p class="fs-2 fw-bold">Customer Supply Request</p>
@@ -139,7 +139,6 @@
 		   				<div class="col-sm-3"><label class="formlabel" for="clientname">Client</label></div>
 		   				<div class="col-sm-9">
 		   					<select class="form-control" id="clientid" name="clientid" style="font-size:12px;"
-
 								required data-parsley-required-message="Client Name is required!">
 		   				 	<option value="">Select Client</option>
 		   				 </select>
@@ -182,17 +181,17 @@
 		   				</div>
 		   			</div>
 		   			<div class="row form-row">
-		   				<div class="col-sm-3"><label class="formlabel"for="csrtotal">CSR Value</label></div>
+		   				<div class="col-sm-3"><label class="formlabel"for="csrtotal">Value</label></div>
 		   				<div class="col-sm-9"><input type="text" class="form-control" id="csrvalue" name="csrvalue"  placeholder="0.00" readonly="" />
 		   				</div>
 		   			</div>
 		   			<div class="row form-row">
-		   				<div class="col-sm-3"><label class="formlabel"for="salespersons1">Sales Person</label></div>
+		   				<div class="col-sm-3"><label class="formlabel"for="salespersons1">Salesperson</label></div>
 		   				<div class="col-sm-9">
 		   					<select class="form-control" id="salespersons1" name="salespersons1"
                                onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;"
                                 required data-parsley-required-message="Sales person is required">
-		   						<option value="">Select Sales Person</option>
+		   						<option value="">Select Salesperson</option>
 		   					</select>
 		   				</div>
 		   			</div>
@@ -209,7 +208,7 @@
 		   				</div>
 		   			</div>
                      <div class="row form-row">
-                        <div class="col-sm-3"><label class="formlabel"for="sendto">Send To</label></div>
+                        <div class="col-sm-3"><label class="formlabel"for="sendto">Notify</label></div>
                         <div class="col-sm-9">
                         <select class="form-control" name="sendto" id="sendto"
                           onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
