@@ -346,6 +346,7 @@ public function updateTicket(Request $request){
                 array_push($mail_list,"jasewe@symphony.co.ke");
               //  array_push($cc_list,"nwatwiri@symphony.co.ke"); 
                 array_push($cc_list,"service@symphony.co.ke"); 
+                array_push($cc_list,"tscalls@symphony.co.ke"); 
 
                 $generalmsg = [
                     "message"=>"Please note that the job card for Ticket # ".$request->ticketno." carried out by ".$csrno[0]->name." has been uploaded.
