@@ -212,6 +212,7 @@ $("#newticketform").submit(function(event){
                 var assignedon = new Date($("#newticketdate").val().replace(/(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"));
                 console.log("assigned date: "+assignedon);
                 var ticketdate = moment(assignedon).format("YYYY-MM-DD HH:mm:ss");
+                console.log("ticket date: "+ticketdate);
                 formData.append('ticketdate',ticketdate);
                 formData.append('clientname',$("#customername option:selected").text());   
                  formData.append('client',$("#customername option:selected").val());               

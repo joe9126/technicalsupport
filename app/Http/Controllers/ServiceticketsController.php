@@ -105,7 +105,7 @@ public function store(Request $request){
                     ['ticketno'=>$ticketno],
                     [
                        'ticketno'=>$ticketno,
-                       'ticketdate'=>strtotime($request->newticketdate),
+                       'ticketdate'=>$request->ticketdate,
                        'client'=>$request->client,
                        'billingrefno'=>$request->billingrefno,
                        'faultreported'=>$request->faultreported,
@@ -121,7 +121,7 @@ public function store(Request $request){
                 ['ticketno'=>$request->ticketno],
                 [
                    'ticketno'=>$request->ticketno,
-                   'ticketdate'=>strtotime($request->newticketdate),
+                   'ticketdate'=>$request->ticketdate,
                    'client'=>$request->client,
                    'billingrefno'=>$request->billingrefno,
                    'faultreported'=>$request->faultreported,
@@ -175,7 +175,7 @@ public function store(Request $request){
                             "contact"=>$contactname,
                             "optionalmsg"=>$msg,
                             "billrefno"=>$request->billrefno,
-                            "ticketdate"=>Carbon::parse($request->newticketdate)->format("d/m/Y h:m"),
+                            "ticketdate"=>Carbon::parse($request->ticketdate)->format("l jS \\of F Y h:i"),
                             "priority"=>$request->urgency,
                         ];
 

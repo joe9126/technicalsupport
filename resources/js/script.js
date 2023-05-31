@@ -560,9 +560,9 @@ $(function(){
         $("#newticketdate").datetimepicker({
             value: '',
             rtl: false,
-             format: 'd-m-Y H:i',
+             format: 'Y-m-d H:i',
             formatTime: 'H:i',
-           formatDate: 'd-m-Y',
+           formatDate: 'Y-m-d',
            step: 30,
            monthChangeSpinner: true,
             closeOnDateSelect: false,
