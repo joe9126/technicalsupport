@@ -111,7 +111,7 @@ public function store(Request $request){
                        'faultreported'=>$request->faultreported,
                        'urgency'=>$request->urgency,
                        'location'=>$request->location,
-                       'personnel'=>$request->personnel,
+                       'personnel'=>$ticket->techstaffid,
                        'status'=>$request->status,
                        'createdby'=>Auth::user()->id
                       ]);
