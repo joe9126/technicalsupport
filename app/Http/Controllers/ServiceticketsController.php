@@ -175,7 +175,7 @@ public function store(Request $request){
                             "contact"=>$contactname,
                             "optionalmsg"=>$msg,
                             "billrefno"=>$request->billrefno,
-                            "ticketdate"=>Carbon::parse($request->ticketdate)->format("l jS \\of F Y h:i"),
+                            "ticketdate"=>Carbon::parse($request->ticketdate)->format("l jS \\of F Y h:i"), // shows date as Thursday 12th of June 2023 10.30
                             "priority"=>$request->urgency,
                         ];
 
