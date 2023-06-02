@@ -139,10 +139,10 @@ class ClaimsController extends Controller
             "clients.clientname",
             "users.name",
             )
-        ->leftjoin("serviceentries","claims.jobcardno","=","serviceentries.jobcardno")
-        ->leftjoin("servicetickets","claims.ticketno","=","servicetickets.ticketno")
-        ->leftjoin("clients","servicetickets.client","=","clients.id")
-       ->leftjoin("users","servicetickets.personnel","=","users.id")
+        ->rightjoin("serviceentries","claims.jobcardno","=","serviceentries.jobcardno")
+        ->rightjoin("servicetickets","claims.ticketno","=","servicetickets.ticketno")
+        ->rightjoin("clients","servicetickets.client","=","clients.id")
+       ->rightjoin("users","servicetickets.personnel","=","users.id")
        ->where("users.id","=",Auth::id())
        ->where("claims.claimstatus","=","Unclaimed")
       ->where("claims.claimamount",">",0)
