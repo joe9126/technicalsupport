@@ -193,8 +193,8 @@ public function store(Request $request){
                     ];
                     array_push($assignedtechs,$techinfo); 
             } 
-                // array_push($cc_list,"service@symphony.co.ke"); 
-                //array_push($cc_list,"tscalls@symphony.co.ke");
+                array_push($cc_list,"service@symphony.co.ke"); 
+                array_push($cc_list,"tscalls@symphony.co.ke");
                 //$emaildata = array("ticketinfo"=>$ticketinfo );
              $status =  Mail::send('layouts.ticketemail', ["ticketinfo"=>$ticketinfo,"techdata"=>$assignedtechs],function($message) use ($mail_list,$cc_list, $subject){
                         $message->to($mail_list, '')

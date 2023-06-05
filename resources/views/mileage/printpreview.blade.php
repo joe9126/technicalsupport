@@ -23,7 +23,7 @@
             <header>
                <div class="row  mb-2 mt-2">
                  <div class="col-sm-3">
-                     <img src="{{url('/images/symphony.png')}}" data-holder-rendered="true" />
+                     <img src="{{url('/images/Symphony_HD_LOGO.png')}}" data-holder-rendered="true" />
                  </div>
                  <div class="col-sm-9">
                      <p class="text-center text-uppercase text-dark fw-bold display-6">Mileage Claims</p>

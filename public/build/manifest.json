@@ -18,7 +18,7 @@
     "src": "node_modules/html2canvas/dist/html2canvas.esm.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-b215a2ee.css",
+    "file": "assets/app-8294ea9c.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },

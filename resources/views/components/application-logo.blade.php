@@ -4,4 +4,4 @@
 </svg>
 -->
 
-<img  class="logo" src="{{url('/images/symphony.png')}}" data-holder-rendered="true" />
+<img  class="logo" src="{{url('/images/Symphony_HD_LOGO.png')}}" data-holder-rendered="true" />
