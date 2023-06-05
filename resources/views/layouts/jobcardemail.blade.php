@@ -22,7 +22,7 @@
                <p>Please note that this service ticket has been attended to with the status: {{$ticketinfo['status']}}.</p>
           
 
-               <table  border="1" style="width:80%; border-collapse:collapse; margin-top:5px; margin-left:auto; margin-right:auto; background:#fff;">
+               <table  border="1" style="width:80%; border-collapse:collapse; margin-top:5px; margin-left:auto; margin-right:auto;">
                 <thead style="background: #111145; color:#e6eeee; font-weight:bold;">
                     <th colspan="4">Ticket # {{$ticketinfo['ticketno']." : ".$ticketinfo['fault']}}</th>
                 </thead>
