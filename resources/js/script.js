@@ -718,9 +718,14 @@ $.ajax({
 
     },
     success:function(data){
-       // console.log(data);
+       console.log(data);
        var ticketno = $("#ticketno").text(data[0].ticketno);
-       var cardtitle = "Ticket # "+data[0].ticketno+" | "+data[0].clientname+" | "+moment(data[0].start_time).format("ddd d MMM, YYYY");
+      var cardtitle = "Ticket # "+data[0].ticketno+" | "+data[0].clientname+" | "+moment(data[0].start_time).format("ddd d MMM, YYYY");
+      
+       if(data[0].jobcardno ==="no update"){
+            cardtitle = "Ticket No "+data[0].ticketno+" | "+data[0].clientname+" | "+moment(data[0].ticketdate).format("ddd d MMM, YYYY");
+       }
+      
        $("#cardtitle").text(cardtitle);
        $("#jobcardno").val(data[0].jobcardno);
        $("#site").val(data[0].location);

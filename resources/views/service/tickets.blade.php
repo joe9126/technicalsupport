@@ -134,8 +134,8 @@
       <!-- TICKET UPDATE SECTION -->
     <div class="row " id="ticketupdate">
         <div class="col-sm-12">
-            <div class="bg-light rounded pl-5 pr-5 pt-6 pb-6  d-flex justify-content-center section">
-                <div class="card ml-10 mr-10 pl-5 pr-5 pt-2 pb-5 col-sm-8">
+            <div class="pl-5 pr-5 pt-6 pb-6  d-flex justify-content-center ">
+                <div class="card ml-10 mr-10 pl-5 pr-5 pt-2 pb-5 col-sm-8 rounded">
                     <div class="alert alert-success text-center mt-3" role="alert" id="alertmessage2">
                         <span class="message fw-bold"></span>
                     </div>

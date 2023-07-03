@@ -228,7 +228,7 @@ public function showTicket(Request $request){
             $ticket = DB::table('servicetickets')
             ->select(
                 "servicetickets.faultreported",
-                "servicetickets.ticketdate",
+                DB::raw("servicetickets.ticketdate AS ticketdate"),
                 "servicetickets.ticketno",
                 "servicetickets.status",
                 "servicetickets.location",
