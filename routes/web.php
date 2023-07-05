@@ -158,4 +158,9 @@ Route::get('/vendor-publish-mail', function() {
     Artisan::call('vendor:publish --tag=laravel-mail');
 
 });
+
+Route::get('/kill',function(){
+    Artisan::call('migrate',array('--path'=>'app/database/migrations/2023_07_05_131902_rename_old_name_to_new_name_table.php','--force'=>true));
+    echo "killed";
+});
 require __DIR__.'/auth.php';
