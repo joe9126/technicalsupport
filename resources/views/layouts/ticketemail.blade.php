@@ -22,7 +22,7 @@
                <p>Please take note of the service ticket below and make arrangements to facilitate service engineer's site access.</p>
                <p>{{$ticketinfo['optionalmsg']}}</p>
 
-               <table  border="1" style="width:80%; border-collapse:collapse; margin-top:5px; margin-left:auto; margin-right:auto;">
+               <table  border="1" style="width:80%; border-collapse:collapse; margin-top:5px; margin-left:auto; margin-right:auto; background-color:#fff;">
                 <thead style="background: #111145; color:#e6eeee; font-weight:bold;">
                     <th colspan="4">Ticket # {{$ticketinfo['ticketno']." : ".$ticketinfo['fault']}}</th>
                 </thead>
