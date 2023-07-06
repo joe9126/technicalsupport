@@ -15,6 +15,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.symphony.co.ke
-        username:  ${{secrets.ftp_secret}}
+        username:  ${{secrets.ftp_username}}
         password: ${{secrets.ftp_password}}
         server-dir: /home/symphony/test.symphony.co.ke/
