@@ -39,6 +39,7 @@ class SupplyrequestsController extends Controller
                                     'supply_requests.status',
                                     'creators.name as csrcreator'
                                     )
+                                ->whereBetween("supply_requests.csrdate",[Carbon::now()->subYear(),Carbon::now()]) //get record for last 12 months
 	                            ->orderBy('supply_requests.csrno','desc')
 	                            ->get();
 
