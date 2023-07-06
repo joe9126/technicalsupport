@@ -17,4 +17,4 @@ jobs:
         server: ftp.symphony.co.ke
         username: administrator@symphony.co.ke
         password: FU5q&Ae9MS.^
-        server-dir: /home/symphony/test.symphony.co.ke
+        server-dir: /home/symphony/test.symphony.co.ke/

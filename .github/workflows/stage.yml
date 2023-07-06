@@ -17,4 +17,4 @@ jobs:
         server: ftp.symphony.co.ke
         username: ${{secrets.ftp_secret}}
         password: ${{secrets.ftp_password}}
-        server-dir: /home/symphony/stagingtech.symphony.co.ke
+        server-dir: /home/symphony/stagingtech.symphony.co.ke/
