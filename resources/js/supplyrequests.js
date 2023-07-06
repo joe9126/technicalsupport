@@ -1479,7 +1479,7 @@ $(document).ready(function(){
     contentType:false,
     processType:false,
     success:function(salesdata){
-    // console.log(salesdata);
+     console.log(salesdata);
      var newcollection =[];
      var sales =salesdata.sales;
 
@@ -1492,10 +1492,11 @@ $(document).ready(function(){
       }
       const salesKES =  sales.filter(item => item.currency.indexOf('KES') !== -1);
 
+      console.log(newcollection,"newcollection");
 
      for(var x in salesKES){
 
-          if(salesKES.monthname === newcollection.month){
+          if(salesKES.monthname === newcollection[x].month){
             //console.log(newcollection[x].month);
               if(newcollection[x] !=null)
               {
@@ -1527,6 +1528,35 @@ $(document).ready(function(){
                 var s = {month:"May",sales:{USD:0,KES:salesKES[x].monthsales}};
                 newcollection.push(s);
                 break;
+
+                case 6:
+                var s = {month:"June",sales:{USD:0,KES:salesKES[x].monthsales}};
+                newcollection.push(s);
+                break;
+                case 7:
+                var s = {month:"July",sales:{USD:0,KES:salesKES[x].monthsales}};
+                newcollection.push(s);
+                break;
+                case 8:
+                  var s = {month:"August",sales:{USD:0,KES:salesKES[x].monthsales}};
+                  newcollection.push(s);
+                  break;
+                case 9:
+                    var s = {month:"Sept",sales:{USD:0,KES:salesKES[x].monthsales}};
+                    newcollection.push(s);
+                    break;
+               case 10:
+                      var s = {month:"Oct",sales:{USD:0,KES:salesKES[x].monthsales}};
+                      newcollection.push(s);
+                      break;
+               case 11:
+                        var s = {month:"Nov",sales:{USD:0,KES:salesKES[x].monthsales}};
+                        newcollection.push(s);
+                        break;
+              case 12:
+                    var s = {month:"Dec",sales:{USD:0,KES:salesKES[x].monthsales}};
+                    newcollection.push(s);
+                    break;
             }
 
           }
