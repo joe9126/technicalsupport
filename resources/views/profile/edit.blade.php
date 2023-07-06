@@ -17,7 +17,7 @@
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{Auth::user()->name}}</h4>
-                      <p class="text-secondary mb-1">Field service engineer</p>
+                      <p class="text-secondary mb-1">{{Auth::user()->designation}}</p>
                       <p class="text-muted font-size-sm">Symphony,Nairobi KE</p>
                      <!-- <button class="btn btn-primary">Follow</button>
                       <button class="btn btn-outline-primary">Message</button>-->

@@ -23,7 +23,7 @@
       <div id="csrpanel">
         <div class="row mt-3" id="csrdisplay">
             <div class="col-sm-12 ">
-                <div class="card pl-5 pr-5 pt-3 pb-3">
+                <div class="card pl-5 pr-5 pt-3 pb-3 mb-4">
                      <div class="row mb-3">
                             <div class="col-sm-6">
                                 <p>
